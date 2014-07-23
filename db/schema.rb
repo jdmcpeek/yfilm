@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140723151459) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "name"
     t.string   "fname"
     t.string   "lname"
     t.string   "email"
@@ -67,7 +68,6 @@ ActiveRecord::Schema.define(version: 20140723151459) do
     t.string   "college"
     t.text     "bio"
     t.string   "image"
-    t.string   "name"
     t.string   "password_digest"
     t.string   "netid"
   end

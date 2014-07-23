@@ -35,7 +35,7 @@
 							</p>
 						<% elsif a.role_id != nil %>
 							<% crew_position = Role.find(a.role_id).title %>
-							<% crew_user = User.find(a.user_id).fname %>
+							<% crew_user = User.find(a.user_id).name %>
 							<p>	<%= link_to crew_user, user_path(a.user_id) %>
 								<%= " wants to be your #{crew_position} for " %>
 								<%= p.title %>
