@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140723151459) do
     t.text     "bio"
     t.string   "image"
     t.string   "name"
+    t.string   "password_digest"
     t.string   "netid"
   end
 
