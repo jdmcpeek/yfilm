@@ -1,0 +1,62 @@
+<%= render "layouts/header" %>
+
+<div class = "pure-g">
+
+    <div class = "pure-u-1 container">
+        <h1> Editing fun! </h1>
+
+		<div class = "pure-form">
+	
+			<%= form_for(@me) do |f| %>
+
+			<p> 
+			<%= f.label "Upload your headshot!" %> <br>
+			<%= f.file_field :image %> 
+			</p>
+
+			<p> 
+			<%= f.label "Describe yourself" %> <br>
+			<%= f.text_area :bio %> 
+			</p>
+
+			<h3>What are your interests?</h3>
+
+            <%= f.hidden_field :id, value: @me.id %>
+            <!-- TAKE A LOOK AT THIS ^^ -->
+
+            <%= fields_for(@interest) do |ff| %>
+                <p><%= ff.label "acting" %>
+                <%= ff.check_box :acting %></p>
+
+                <p><%= ff.label "directing" %>
+                <%= ff.check_box :directing %></p>
+
+
+                <p><%= ff.label "editing" %>
+                <%= ff.check_box :editing %></p>
+
+
+                <p><%= ff.label "costumes" %>
+                <%= ff.check_box :costumes %></p>
+
+
+                <p><%= ff.label "cinematography" %>
+                <%= ff.check_box :cinematography %></p>
+
+
+                <p><%= ff.label "camerawork" %>
+                <%= ff.check_box :camerawork %></p>
+
+
+                <p><%= ff.label "sound" %>
+                <%= ff.check_box :sound %></p>
+
+                <%= f.submit "Save Changes", class: "pure-button" %>
+            <% end %>
+        <% end %>
+
+
+        </div>
+    </div>
+</div>
+ 

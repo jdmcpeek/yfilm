@@ -1,0 +1,17 @@
+<%= render "layouts/header" %>
+
+
+<div class = "pure-g">
+	<div class = "pure-u-1 container">
+
+	<h1> All Filmmakers </h1>
+		
+		<% User.all.each do |u| %>
+			<p>
+			<%= image_tag u.image_url(:tiny_avatar).to_s %>
+			<%= link_to u.fname, user_path(u.id)%>
+			</p>
+		<% end %>
+
+	</div>
+</div>

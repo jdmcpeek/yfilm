@@ -1,0 +1,164 @@
+body {
+	/*background-color: #0F161D;*/
+
+}
+
+.container {
+	position: relative;
+	left: 50%;
+	margin-left: -425px;
+	width: 850px;
+	margin-top:25px;
+	top:0px;
+	bottom:0px;
+	padding-bottom:25px;
+}
+
+
+/* Menu styling */
+
+#menu {
+	background-color: #ECEDED;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:700;
+	text-transform: uppercase;
+	letter-spacing:2px;
+	font-size: 14px;
+	text-align: center;
+
+}
+
+#menu a:link {
+	color:#0F161D;
+}
+
+#menu a:hover {
+	color:#0066CC;
+}
+
+/* Announcements styling */
+
+.announcements {
+	height:250px;
+}
+
+.announcements.titlebar {
+	letter-spacing: 2px;
+	text-align: center;
+	font-family:'Josefin Sans', sans-serif;
+	line-height: .5;
+/*	color: #7F8080;
+*/}
+
+.announcements.titlebar h3 {
+	font-size: 50px;
+}
+
+.announcements.titlebar h4 {
+	font-size: 30px;
+}
+
+.announcements.titlebar p {
+	letter-spacing: 1px;
+	font-size: 24px;
+	font-weight: 300;
+	line-height: .1;
+	color: #7F8080;
+}
+
+/* Slideshow styling */
+
+.slideshow_container {
+	position: relative;
+	width:100%;
+	overflow: visible;
+}
+
+.start {
+	margin-left:255px;
+}
+
+.frame {
+	position: absolute;
+	left: 50%;
+	margin-left: -425px;
+	width: 844px;
+	height: 350px;
+	border: 3px solid #0066CC;
+	z-index: 1;
+	margin-top:25px;
+}
+
+#slideshow #slideshowWindow {
+			width:100%;
+			height:400px;
+			margin:0;
+			padding:0;
+			position:relative;
+			overflow:hidden;
+			border-bottom:3px solid black;
+		}
+
+		#slideshow #slideshowWindow .slide {
+			margin:0;
+			padding:0;
+			width:900px; 
+			height:400px;
+			float:left;
+			position:relative;
+		}
+
+		.slide img {
+			width:100%;
+			opacity: 85%;
+		}
+
+		#slideshow #slideshowWindow .slide .slideText {
+			position:absolute;
+			top:75px;
+			left:0px;
+			height:50px;
+			margin-top:40px;
+			margin-left:55px;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-family:'Josefin Sans', sans-serif;
+			line-height: .35;
+			z-index: 2;
+		}
+
+		#slideshow #slideshowWindow .slide .slideHeader {
+			position:absolute;
+			top:50px;
+			left:0px;
+			height:30px;
+			border: 3px solid #0066CC;
+			margin-left:50px;
+			padding: 5px 10px 20px 10px;
+			color:#0066CC;
+			font-weight: 400;
+			font-family:'Josefin Sans', sans-serif;
+			line-height: .35;
+			z-index: 2;
+		}
+
+		#slideshow #slideshowWindow .slide .slideText h1 {
+			letter-spacing: .5px;
+			font-size:30pt;
+			line-height: 1;
+		}
+
+		#slideshow #slideshowWindow .slide .slideHeader h3 {
+			letter-spacing: 2px;
+			font-size:18pt;
+		}
+
+		#slideshow #slideshowWindow .slide .slideText a:link, 
+		#slideshow #slideshowWindow .slide .slideText a:visited {
+			color:#0066CC;
+			text-decoration:none;
+		}
+
+		#slideshow #slideshowWindow .slide .slideText a:hover {
+			color:#FF0066;
+		}

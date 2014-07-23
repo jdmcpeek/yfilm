@@ -1,0 +1,41 @@
+<%= render 'layouts/header' %>
+
+
+
+<div class="pure-g">
+  <div class="pure-u-1 container">
+    
+<h1>Sign up</h1>
+   <div class = "pure-form">
+
+      <%= form_for(@me) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+          <%= f.label :First_Name %>
+          <%= f.text_field :fname %>
+
+          <%= f.label :Last_Name %>
+          <%= f.text_field :lname %>
+
+          <%= f.label :Yale_email %>
+          <%= f.text_field :email %>
+
+          <%= f.label :college %>
+          <%= f.text_field :college %>
+
+          <%= f.label :year %>
+          <%= f.text_field :year %>
+
+          <%= fields_for(@interest) do |ff| %>
+            <%= ff.hidden_field :acting, value: 0 %>
+          <% end %>
+
+          <%= f.submit "Save Changes", class: "pure-button" %>
+        
+        <% end %>
+
+  </div>
+
+
+  </div>
+</div>
