@@ -19,6 +19,7 @@ protected
  
 def getMe
   @me = User.find_or_create_by_netid( session[:cas_user] )
+  @interest = @me.build_interest
   if !@me
     redirect_to :root
     return false

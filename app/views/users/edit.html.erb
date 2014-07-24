@@ -24,7 +24,7 @@
             <%= f.hidden_field :id, value: @me.id %>
             <!-- TAKE A LOOK AT THIS ^^ -->
 
-            <%= fields_for(@interest) do |ff| %>
+            <%= fields_for(@me.interest) do |ff| %>
                 <p><%= ff.label "acting" %>
                 <%= ff.check_box :acting %></p>
 

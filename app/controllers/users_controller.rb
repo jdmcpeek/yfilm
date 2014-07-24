@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new #will need landing page  
-    @interest = @me.build_interest
+   
     if @me.email && @me.college && @me.year
       redirect_to user_path(@me.id)
     end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def update
     @me = User.find(params[:id])
-    @interest = @me.build_interest(interest_params).save
+    @myinterests = @interest.update(interest_params)
     @me.update(me_params)
     redirect_to user_path
   end
