@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   
   def skip_login? #skip login for static pages yayaayay!
-	true
+	 true
   end
 
   def home
@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def screenings
-    
+    getMe
   end
 
   def logout

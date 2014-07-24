@@ -3,9 +3,11 @@
 	<div class = "pure-u-1 pure-menu pure-menu-open pure-menu-horizontal" id="menu">
 		<ul>
 			<li><a href="/">YFA </a> </li>
-			<li> <%= link_to "Screenings", projects_screenings_path %> </li>
+			<li> <%= link_to "Screenings", screenings_path %> </li>
+			
 			<% if !signedin? %>
 			<li> <%= link_to "Log In", new_user_path %> </li>
+			
 			<% else %>
 			<li> <%= link_to "Projects", projects_path %></li>
 			<li> <%= link_to "Profile", user_path(@me.id) %></li>

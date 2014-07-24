@@ -10,7 +10,7 @@ root 'static_pages#home'
 
   get "users/new"
 
-  match '/screenings', to: 'projects#screenings', via: 'get'
+  match '/screenings', to: 'static_pages#screenings', via: 'get'
 
   match '/search', to: 'projects#search', via: 'get'
   

@@ -16,10 +16,10 @@ class ProjectsController < ApplicationController
 
 	end
 
-	def screenings
-		getMe
+	# def screenings
+	# 	getMe
 		
-	end
+	# end
 
 	
 	def new
