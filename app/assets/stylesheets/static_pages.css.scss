@@ -126,8 +126,11 @@ a:hover {
 }
 
 .start {
-	margin-left:255px;
-}
+	position: relative;
+	left: 50%;
+	margin-left: -450px;
+/*	width: 850px;
+*/}
 
 .frame {
 	position: absolute;

@@ -10,7 +10,6 @@ $(document).ready(function() {
 
     		slides.wrapAll('<div id="slidesHolder"></div>')
     		slides.css({'float':'left'});
-    		slides.css({'marginLeft':'255'});
     		$('#slidesHolder').css('width', slideWidth * numberOfSlides)
 
     		function changePosition() {
