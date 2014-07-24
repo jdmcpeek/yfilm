@@ -1,5 +1,28 @@
 body {
-	/*background-color: #0F161D;*/
+	background-image: url(/noir_background.png);
+
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+  	color:	#B7B9BB;
+
+  	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:300;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	text-align: center;
+}
+
+h4 {
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:500;
+	letter-spacing: 1px;
 
 }
 
@@ -33,38 +56,39 @@ body {
 }
 
 #menu a:hover {
-	color:#0066CC;
+	color:#0066FF;
 }
 
 /* Announcements styling */
 
 .announcements {
-	height:250px;
+	height:150px;
 }
 
 .announcements.titlebar {
-	letter-spacing: 2px;
-	text-align: center;
+	text-align: left;
 	font-family:'Josefin Sans', sans-serif;
 	line-height: .5;
-/*	color: #7F8080;
-*/}
+	color:#9FA2A5;
+}
 
-.announcements.titlebar h3 {
-	font-size: 50px;
+.announcements.titlebar h1 {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-size: 64px;
+	font-weight:300;
+	text-align: left;
+
 }
 
 .announcements.titlebar h4 {
-	font-size: 30px;
+	letter-spacing: 1px;
+	font-size: 35px;
+	font-weight: 300;
+	color: 	#6F7377;
+	line-height: .1;
 }
 
-.announcements.titlebar p {
-	letter-spacing: 1px;
-	font-size: 24px;
-	font-weight: 300;
-	line-height: .1;
-	color: #7F8080;
-}
 
 /* Slideshow styling */
 
@@ -72,6 +96,7 @@ body {
 	position: relative;
 	width:100%;
 	overflow: visible;
+	background-color:#0F161D ;
 }
 
 .start {
@@ -84,7 +109,7 @@ body {
 	margin-left: -425px;
 	width: 844px;
 	height: 350px;
-	border: 3px solid #0066CC;
+	border: 3px solid #0066FF;
 	z-index: 1;
 	margin-top:25px;
 }
@@ -116,10 +141,10 @@ body {
 		#slideshow #slideshowWindow .slide .slideText {
 			position:absolute;
 			top:75px;
-			left:0px;
+			margin-left:55px;
 			height:50px;
 			margin-top:40px;
-			margin-left:55px;
+			width:300px;
 			font-weight: 700;
 			text-transform: uppercase;
 			font-family:'Josefin Sans', sans-serif;
@@ -127,15 +152,24 @@ body {
 			z-index: 2;
 		}
 
+		#slideshow #slideshowWindow .slide .slideText a:link, 
+		#slideshow #slideshowWindow .slide .slideText a:visited {
+			color:#0066FF;
+			text-decoration:none;
+		}
+
+		#slideshow #slideshowWindow .slide .slideText a:hover {
+			color:#33CCFF;
+		}
+
 		#slideshow #slideshowWindow .slide .slideHeader {
 			position:absolute;
 			top:50px;
-			left:0px;
-			height:30px;
-			border: 3px solid #0066CC;
 			margin-left:50px;
+			height:30px;
+			border: 3px solid #0066FF;
 			padding: 5px 10px 20px 10px;
-			color:#0066CC;
+			color:#0066FF;
 			font-weight: 400;
 			font-family:'Josefin Sans', sans-serif;
 			line-height: .35;
@@ -144,8 +178,10 @@ body {
 
 		#slideshow #slideshowWindow .slide .slideText h1 {
 			letter-spacing: .5px;
-			font-size:30pt;
+			font-size:50px;
 			line-height: 1;
+			text-align:left;
+			font-weight:700;
 		}
 
 		#slideshow #slideshowWindow .slide .slideHeader h3 {
@@ -153,12 +189,4 @@ body {
 			font-size:18pt;
 		}
 
-		#slideshow #slideshowWindow .slide .slideText a:link, 
-		#slideshow #slideshowWindow .slide .slideText a:visited {
-			color:#0066CC;
-			text-decoration:none;
-		}
-
-		#slideshow #slideshowWindow .slide .slideText a:hover {
-			color:#FF0066;
-		}
+	
