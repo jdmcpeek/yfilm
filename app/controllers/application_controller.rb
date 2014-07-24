@@ -6,7 +6,7 @@ before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
 # Add this before filter to set a local variable for the current user from CAS session
 before_filter :getMe, :unless => :skip_login?
 
-# before_filter :getInterest
+before_filter :getInterest, :unless => :skip_login?
 
 
  # Prevent CSRF attacks by raising an exception.
@@ -19,16 +19,15 @@ protected
  
 def getMe
   @me = User.find_or_create_by_netid( session[:cas_user] )
-  @interest = @me.build_interest
   if !@me
     redirect_to :root
     return false
   end
 end
 
-# def getInterest
-#  	@interest ||= Interest.create(user_id: @me.id)
-# end
+def getInterest
+ 	@interest = Interest.find_or_create_by_user_id(@me.id)
+end
  
 # hack for skip_before_filter with CAS
 # overwrite this method (with 'true') in any controller you want to skip CAS authentication
