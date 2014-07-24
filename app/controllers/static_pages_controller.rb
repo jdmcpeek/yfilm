@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   end
 
   def home
+  	getMe
   end
 
   def logout
