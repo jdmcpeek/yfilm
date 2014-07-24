@@ -13,7 +13,7 @@
 			<%= image_tag p.image_url(:thumb).to_s %>
 
 			<div class = "project_text">
-				<h4><%= link_to p.title, project_path(p.id)%></h4>
+				<h4><%= link_to p.title, "/screenings/#{p.id}"%></h4>
 				<p> <%= p.dates %> </p>
 			</div>
 
@@ -25,3 +25,5 @@
 
 </div>
 </div>
+
+<%= render 'layouts/footer' %>
