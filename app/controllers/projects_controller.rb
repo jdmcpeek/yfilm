@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
 
-	def skip_login? #skip login for static pages yayaayay!
-		true
-  	end
+	# def skip_login? #skip login for static pages yayaayay!
+	# 	true
+ #  	end
 
 	def index
 		getMe
