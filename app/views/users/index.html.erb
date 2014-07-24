@@ -7,10 +7,12 @@
 	<div class = "pure-u-1 container">
 		
 		<% User.all.each do |u| %>
-			<p>
-			<%= image_tag u.image_url(:tiny_avatar).to_s %>
-			<%= link_to u.fname, user_path(u.id)%>
-			</p>
+			<div class = "pure-u-1-2 user_list">
+				<div class="user_thumb">
+					<%= image_tag u.image_url(:tiny_avatar).to_s %>
+				</div>
+				<%= link_to u.fname, user_path(u.id)%>
+			</div>
 		<% end %>
 
 	</div>
