@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
 
-	def skip_login? #skip login for static pages yayaayay!
-		true
-  	end
+	# def skip_login? #skip login for static pages yayaayay!
+	# 	true
+ #  	end
 
 	def index
 		getMe
@@ -15,6 +15,11 @@ class ProjectsController < ApplicationController
 		@person = @person + User.where(lname: params[:search]) if params[:search].present?
 
 	end
+
+	# def screenings
+	# 	getMe
+		
+	# end
 
 	
 	def new

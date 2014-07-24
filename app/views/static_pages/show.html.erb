@@ -1,0 +1,65 @@
+<%= render "layouts/header" %>
+
+<div class = "pure-g">
+
+<div class = "pure-u-1 container">
+<div class = "pure-u-1 top_half">
+<h1 class = "project_title"> <%= @project.title %> </h1>
+
+<p class= "genre"> <%= @project.genre %></p>
+
+<div class = "project_image" >
+<%= image_tag @project.image_url.to_s %>
+</div>
+</div>
+
+<div class="project_description">
+<p><b>DESCRIPTION:</b> <%= @project.description %> </p>
+<p><b>Dates:</b> <%= @project.dates %></p>
+<p><b>Location:</b> <%= @project.location %></p>
+<p><b>Producer:</b> <%= @producer.name %></p>
+</div>
+</div>
+</div>
+
+
+<div class = "pure-g">
+
+	<div class = "container">
+		<div class = "pure-u-1-2">
+			<h2> Cast </h2>
+
+			<% @project.roles.each do |r| %>
+
+				<p>
+
+				<% if r.cast == true %>
+				<%= r.title %> 
+
+				<% if r.user_id == nil %>
+					<i>uncast</i>
+				<% else %>
+				<% @user = User.find(r.user_id) %> <%= @user.fname %>
+				<% end %>
+
+				<% end %>
+
+		<% end %> </p>
+
+		<div class = "pure-u-1-2">
+<h2> Crew </h2>
+<% @project.roles.each do |r| %>
+
+<p>
+<% if r.cast == false %>
+<%= r.title %> 
+
+<% if r.user_id == nil %>
+<i>needed</i>
+<% else %>
+<% @user = User.find(r.user_id) %> <%= @user.fname %>
+<% end %>
+
+<% end %>
+
+<% end %> </p>
