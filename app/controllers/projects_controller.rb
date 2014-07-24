@@ -16,6 +16,11 @@ class ProjectsController < ApplicationController
 
 	end
 
+	def screenings
+		getMe
+		
+	end
+
 	
 	def new
 		@me = User.find_or_create_by_netid( session[:cas_user] )

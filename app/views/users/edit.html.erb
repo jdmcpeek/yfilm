@@ -3,24 +3,34 @@
 <div class = "pure-g">
 
     <div class = "pure-u-1 container">
-        <h1> Editing fun! </h1>
+        <h1> EDIT PROFILE </h1>
 
 		<div class = "pure-form">
 	
 			<%= form_for(@me) do |f| %>
 
 			<p> 
-			<%= f.label "Upload your headshot!" %> <br>
+			<%= f.label "YOUR HEADSHOT" %> <br>
 			<%= f.file_field :image %> 
 			</p>
 
             <p> 
-            <%= f.label "Change name" %> <br>
+            <%= f.label "CHANGE EMAIL" %> <br>
             <%= f.text_field :name %> 
             </p>
 
+            <p> 
+            <%= f.label "CHANGE NICKNAME" %> <br>
+            <%= f.text_area :fname %> 
+            </p>
+
+            <p> 
+            <%= f.label "CHANGE EMAIL" %> <br>
+            <%= f.text_area :bio %> 
+            </p>
+
 			<p> 
-			<%= f.label "Describe yourself" %> <br>
+			<%= f.label "BIO" %> <br>
 			<%= f.text_area :bio %> 
 			</p>
 

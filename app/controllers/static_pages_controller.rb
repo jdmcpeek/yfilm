@@ -8,6 +8,10 @@ class StaticPagesController < ApplicationController
   	getMe
   end
 
+  def screenings
+    
+  end
+
   def logout
   	reset_session
   	redirect_to "https://secure.its.yale.edu/cas/logout" 
