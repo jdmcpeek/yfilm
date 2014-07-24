@@ -1,18 +1,35 @@
 /* project show page styling */
+.title_bar {
+	height: 100px;
+}
+
+.left-column {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	margin-right:50px;
+	width:400px;
+}
+
+.right-column {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	width:400px;
+}
 
 .project_title {
 	font-size: 50px;
-}
-
-.top_half {
-	text-align: center;
-	margin-bottom:25px;
+	text-align: left;
 }
 
 .project_image {
 	margin-top:25px;
+	margin-bottom:50px;
 	width:100%;
-	height: 400px;
+	max-height: 400px;
 	overflow:hidden;
 }
 
@@ -27,12 +44,19 @@
 	letter-spacing: 1px;
 }
 
-.bottom_half {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
-	font-weight: 300;
-	letter-spacing: 1px;
+.authorized {
+	margin-top: 10px;
+	border: 2px solid #B7B9BB;
+	padding: 10px;
+
 }
+
+.section {
+	margin-top: 50px;
+	border-top: 2px solid #B7B9BB;
+	padding-top: 10px;
+}
+
 
 /* Index page styling */
 
