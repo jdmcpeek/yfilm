@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   	end
 
 	def index
-		
+		getMe
 	end
 
 	def search
@@ -29,6 +29,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
+		
 		@me = User.find_or_create_by_netid( session[:cas_user] )
 		@project = Project.find(params[:id])
 		@producer_id = Role.find_by(project_id: @project.id).user_id
