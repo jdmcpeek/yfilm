@@ -3,111 +3,124 @@
 <div class = "pure-g">
 
 	<div class = "pure-u-1 container">
-		<h1> <%= @project.title %> </h1>
+		<div class = "pure-u-1 top_half">
+			<h1 class = "project_title"> <%= @project.title %> </h1>
 
-		Genre: <%= @project.genre %><br>
+			<p class= "genre"> <%= @project.genre %></p>
 
-		<%= image_tag @project.image_url.to_s %>
-
-		Description: <%= @project.description %> <br>
-		Dates: <%= @project.dates %><br>
-		Location: <%= @project.location %><br>
-		Producer: <%= @producer.name %><br>
-
-		<h2> Roles </h2>
-
-		<div class = "pure-u-1-3">
-			<h2> Cast </h2>
-
-			<% @project.roles.each do |r| %>
-
-				<p>
-
-				<% if r.cast == true %>
-					<%= r.title %> 
-
-						<% if r.user_id == nil %>
-						<i>uncast</i>
-						<% else %>
-						<% @user = User.find(r.user_id) %> <%= @user.fname %>
-						<% end %>
-
-				<% if signedin? && current_user == @producer_id %>
-
-						<% auditions = @project.auditions %>
-						<% array = [] %>
-
-						<% auditioners = auditions.each {|a| array.push( [a.user_name, a.user_id])} %>
-						
-						<%= form_for(r) do |f| %>
-							<%= f.label "Choose an actor" %>
-							<%= f.select :user_id, options_for_select(array) %>
-							<%= f.submit "Cast!", class: "pure-button" %>
-						<% end %>
-				<% end %>
-
-				<% end %> </p>
-			<% end %>
-
+			<div class = "project_image" >
+				<%= image_tag @project.image_url.to_s %>
+			</div>
 		</div>
 
-		<div class = "pure-u-1-3">
-			<h2> Crew </h2>
-			<% @project.roles.each do |r| %>
+		<div class="project_description">
+			<p><b>DESCRIPTION:</b> <%= @project.description %> </p>
+			<p><b>Dates:</b> <%= @project.dates %></p>
+			<p><b>Location:</b> <%= @project.location %></p>
+			<p><b>Producer:</b> <%= @producer.name %></p>
+		</div>
+	</div>
+</div>
 
-				<p>
-				<% if r.cast == false %>
-					<%= r.title %> 
 
-						<% if r.user_id == nil %>
-							<i>needed</i>
-						<% else %>
+<div class = "pure-g">
+
+	<div class = "container">
+			<div class = "pure-u-1-2">
+				<h2> Cast </h2>
+
+				<% @project.roles.each do |r| %>
+
+					<p>
+
+					<% if r.cast == true %>
+						<%= r.title %> 
+
+							<% if r.user_id == nil %>
+							<i>uncast</i>
+							<% else %>
 							<% @user = User.find(r.user_id) %> <%= @user.fname %>
-						<% end %>
-					
+							<% end %>
 
 					<% if signedin? && current_user == @producer_id %>
 
-						<% choose_crew = @project.auditions.where(:when => nil) %>
-						<% choose_crew_array = [] %>
-						<% choose_crew.each {|c| choose_crew_array.push( [User.find(c.user_id).fname, c.user_id])} %>
-						
-						<%= form_for(r) do |f| %>
-							<%= f.label "Assign a crewmember" %>
-							<%= f.select :user_id, options_for_select(choose_crew_array) %>
-							<%= f.submit "Hire!", class: "pure-button" %>
-						<% end %>
+							<% auditions = @project.auditions %>
+							<% array = [] %>
+
+							<% auditioners = auditions.each {|a| array.push( [a.user_name, a.user_id])} %>
+							
+							<%= form_for(r) do |f| %>
+								<%= f.label "Choose an actor" %>
+								<%= f.select :user_id, options_for_select(array) %>
+								<%= f.submit "Cast!", class: "pure-button" %>
+							<% end %>
 
 					<% end %>
 
-				<% end %> </p>
-			<% end %>
+					<% end %> </p>
+				<% end %>
+
 
 					<% if signedin? %>
 
-						<% crew_roles = @project.roles.where(cast: false) %>
-						<% crew_role_array = [] %>
+							<%= link_to "Sign up for auditions!", "/projects/#{@project.id}/auditions", class: "pure-button" %>
+					<% end %>
+			</div>
 
-						<% applicants = crew_roles.each {|r| crew_role_array.push( [r.title, r.id] )} %>
+			<div class = "pure-u-1-2">
+				<h2> Crew </h2>
+				<% @project.roles.each do |r| %>
 
-						<%= form_for(@audition) do |f| %>
-							<%= f.hidden_field :project_id, value: @project.id %>
-							<%= f.hidden_field :user_id, value: @me.id %>
-							<%= f.select :role_id, options_for_select(crew_role_array) %>
-							<%= f.submit "Join us!", class: "pure-button" %>
+					<p>
+					<% if r.cast == false %>
+						<%= r.title %> 
+
+							<% if r.user_id == nil %>
+								<i>needed</i>
+							<% else %>
+								<% @user = User.find(r.user_id) %> <%= @user.fname %>
+							<% end %>
+						
+
+						<% if signedin? && current_user == @producer_id %>
+
+							<% choose_crew = @project.auditions.where(:when => nil) %>
+							<% choose_crew_array = [] %>
+							<% choose_crew.each {|c| choose_crew_array.push( [User.find(c.user_id).fname, c.user_id])} %>
+							
+							<%= form_for(r) do |f| %>
+								<%= f.label "Assign a crewmember" %>
+								<%= f.select :user_id, options_for_select(choose_crew_array) %>
+								<%= f.submit "Hire!", class: "pure-button" %>
+							<% end %>
+
 						<% end %>
 
-					<% end %>			
-		</div>
+					<% end %> </p>
+				<% end %>
 
+						<% if signedin? %>
+
+							<% crew_roles = @project.roles.where(cast: false) %>
+							<% crew_role_array = [] %>
+
+							<% applicants = crew_roles.each {|r| crew_role_array.push( [r.title, r.id] )} %>
+
+							<%= form_for(@audition) do |f| %>
+								<%= f.hidden_field :project_id, value: @project.id %>
+								<%= f.hidden_field :user_id, value: @me.id %>
+								<%= f.select :role_id, options_for_select(crew_role_array) %>
+								<%= f.submit "Join us!", class: "pure-button" %>
+							<% end %>
+
+						<% end %>			
+			</div>
+		</div>
+	</div>
+</div>
 
 
 		<% if signedin? && current_user == @producer_id %>
-
-			<h2> <%= link_to "Edit this project", edit_project_path(@project) %></h2>
-			<h2> <%= link_to "Delete this project", @project, method: :delete, 
-																data: { confirm: "Are you sure you want to delete this project?"},
-																title: @project.title %></h2>
 
 			<h3> Add Roles </h3>
 
@@ -125,11 +138,9 @@
 
 			<p><%= link_to "View auditions for #{@project.title}", "/projects/#{@project.id}/auditions" %></p>
 
-		<% elsif signedin? %>
+			<h2> <%= link_to "Edit this project", edit_project_path(@project) %></h2>
+			<h2> <%= link_to "Delete this project", @project, method: :delete, 
+																data: { confirm: "Are you sure you want to delete this project?"},
+																title: @project.title %></h2>
 
-			<h2> <%= link_to "Sign up for auditions!", "/projects/#{@project.id}/auditions" %> </h2> 
-
-		</div>
-
-	<% end %>
-</div>
+		<% end %>
