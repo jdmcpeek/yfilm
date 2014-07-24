@@ -1,18 +1,19 @@
 <%= render "layouts/header" %>
 
+	<h1> All Filmmakers </h1>
+
 
 <div class = "pure-g">
 	<div class = "pure-u-1 container">
-
-	<h1> All Filmmakers </h1>
 		
 		<% User.all.each do |u| %>
-			<p>
-			<% if u.email != nil %>
-				<%= image_tag u.image_url(:tiny_avatar).to_s %>
+
+			<div class = "pure-u-1-2 user_list">
+				<div class="user_thumb">
+					<%= image_tag u.image_url(:tiny_avatar).to_s %>
+				</div>
 				<%= link_to u.name, user_path(u.id)%>
-			<% end %>
-			</p>
+			</div>
 
 		<% end %>
 

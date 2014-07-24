@@ -19,11 +19,37 @@ h1 {
 	text-align: center;
 }
 
+h2 {
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:400;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	text-align: left;
+	font-size: 25px;
+}
+
 h4 {
 	font-family:'Josefin Sans', sans-serif;
 	font-weight:500;
 	letter-spacing: 1px;
 
+}
+
+
+input {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+
+a:link {
+	color:#B7B9BB;
+}
+a:visited {
+	color:#B7B9BB;
+}
+a:hover {
+	color:#0066FF;
 }
 
 .container {
@@ -121,7 +147,6 @@ h4 {
 			padding:0;
 			position:relative;
 			overflow:hidden;
-			border-bottom:3px solid black;
 		}
 
 		#slideshow #slideshowWindow .slide {
