@@ -9,22 +9,22 @@
    <div class = "pure-form">
 
       <%= form_for(@me) do |f| %>
-        <%= render 'shared/error_messages' %>
+        
 
           <%= f.label :Full_Name %>
-          <%= f.text_field :name %>
+          <p><%= f.text_field :name %></p>
 
           <%= f.label :Nick_Name %>
-          <%= f.text_field :fname %>
+          <p><%= f.text_field :fname %></p>
 
           <%= f.label :Yale_email %>
-          <%= f.text_field :email %>
+          <p><%= f.text_field :email %></p>
 
           <%= f.label :college %>
-          <%= f.text_field :college %>
+          <p><%= f.text_field :college %></p>
 
           <%= f.label :year %>
-          <%= f.text_field :year %>
+          <p><%= f.text_field :year %></p>
 
           <%= fields_for(@interest) do |ff| %>
             <%= ff.hidden_field :acting, value: 0 %>
