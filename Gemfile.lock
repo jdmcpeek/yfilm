@@ -26,6 +26,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    auto_html (1.6.4)
+      redcarpet (~> 3.1)
+      rinku (~> 1.5.0)
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
     carrierwave (0.10.0)
@@ -83,6 +86,8 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.1.2)
+    rinku (1.5.1)
     rmagick (2.13.2)
     rubycas-client (2.3.9)
       activesupport
@@ -122,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auto_html
   bcrypt-ruby (= 3.1.2)
   carrierwave
   coffee-rails (~> 4.0.0)

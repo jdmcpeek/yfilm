@@ -11,13 +11,7 @@
 			<% else %>
 			<li> <%= link_to "Projects", projects_path %></li>
 			<li> <%= link_to "Filmmakers", users_path %> </li>
-	<!-- 		<li>
-				<a href="#">Account</a>
-					<ul class = "dropdown"> -->
-						<li> <%= link_to "Profile", user_path(@me.id) %></li>
-						<li> <%= link_to "Log Out", logout_path %> </li>
-		<!-- 			</ul>
-			</li> -->
+			<li> <%= link_to "Profile", user_path(@me.id) %></li>
 			<% end %>
 			
 			<li> 
@@ -26,6 +20,9 @@
 				  <%= submit_tag("Search", class: "pure-button") %>
 				  <% end %> 
 			</li>
+			<% if signedin? %>
+			<li> <%= link_to "Log Out", logout_path %> </li>
+			<% end %>
 		</ul>
 	</div>
 

@@ -8,5 +8,13 @@ class Project < ActiveRecord::Base
 	has_many :auditions
 	mount_uploader :image, ImageUploader
 
+	auto_html_for :video do
+	    html_escape
+	    image
+	    youtube(:autoplay => false)
+	    link :target => "_blank", :rel => "nofollow"
+	    simple_format
+  	end
+
 
 end

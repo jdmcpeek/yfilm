@@ -13,7 +13,7 @@
 				<%= f.text_field :title, :placeholder => "Project title", :class => "pure-input" %>
 
 				<%= f.label "Genre: "%>
-				<%= f.select :genre, options_for_select([["Other", "Other"], ["Comedy", "Comedy"], ["Documentary", "Documentary"], ["Drama", "Drama"] ], :class => "fields") %>
+				<%= f.select :genre, options_for_select([ ["Comedy", "Comedy"], ["Documentary", "Documentary"], ["Drama", "Drama"], ["Silent", "Silent"], ["Adult", "Adult"], ["Sci-Fi", "Sci-Fi"], ["Animation", "Animation"], ["Alternative, Alternative"], ["Other", "Other"] ], :class => "fields") %>
 
 				<p> <%= f.text_area :description, :placeholder => "Describe the project", :class => "pure-input" %> </p>
 
@@ -21,7 +21,15 @@
 
 				<p> <%= f.text_field :location, :placeholder => "Location", :class => "pure-input" %> </p>
 
-				<p> <%= f.file_field :image %> </p>
+				<p> <%= f.label "Upload image" %> <br>
+				 	<%= f.file_field :image %> </p>
+
+				<p> <%= f.label :remote_image_url, "or image url" %> <br>
+				 	<%= f.text_field :remote_image_url %> </p>
+
+				<p> <%= f.label "Link to video" %> <br>
+				 	<%= f.text_field :video %> </p>
+
 				<p> Coming Soon: Upload your script! </p>
 
 			<%= f.submit "Create Project", class: "pure-button" %>

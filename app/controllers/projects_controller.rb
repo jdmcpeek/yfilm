@@ -74,7 +74,7 @@ class ProjectsController < ApplicationController
   private
 
 	def project_params
-        params.require(:project).permit(:title, :genre, :description, :dates, :producer, :location, :image, :remote_image_url)
+        params.require(:project).permit(:title, :genre, :description, :dates, :producer, :location, :image, :remote_image_url, :video, :video_html)
     end
 
 end

@@ -12,6 +12,8 @@ gem 'rubycas-client'
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
 
+gem "auto_html"
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 gem 'sqlite3'
