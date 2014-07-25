@@ -12,7 +12,6 @@ class ProjectsController < ApplicationController
 		@movie = Project.where(nil) #creates an anonymous scope
 		@movie = @movie.find_project(params[:search]) if params[:search].present?
 		@person = User.where(name: params[:search]) if params[:search].present?
-		@interest = Interest.where[params[:search] => "1"] if params[:search].present?
 	end
 
 	# def screenings
