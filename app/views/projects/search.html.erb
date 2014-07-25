@@ -1,24 +1,27 @@
 <%= render "layouts/header" %>
 
 
+<div class = "pure-g">
+	<div class = "pure-u-1 container user_list">
+		<% @movie.each do |f| %>
 
-<% @movie.each do |f| %>
+			<p><%= link_to f.title, project_path(f.id) %></p>
 
-	<p><%= link_to f.title, project_path(f.id) %></p>
-
-<% end %>
+		<% end %>
 
 
-<% @person.each do |f| %>
+		<% @person.each do |f| %>
 
-	<p><%= link_to f.name, user_path(f.id) %></p>
+			<p><%= link_to f.name, user_path(f.id) %></p>
 
-<% end %>
+		<% end %>
 
-<% @person.each do |f| %>
+		<% @interest.each do |f| %>
 
-	<p><%= link_to f.name, user_path(f.id) %></p>
+			<p><%= link_to f.name, user_path(f.id) %></p>
 
-<% end %>
+		<% end %>
+	</div>
+</div>
 
 <%= render "layouts/footer" %>
