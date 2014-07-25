@@ -1,7 +1,7 @@
 <div class = "pure-g"> 
 	
 	<div class = "pure-u-1 pure-menu pure-menu-open pure-menu-horizontal" id="menu">
-		<ul>
+		<ul id="std-menu-items">
 			<li><a href="/">YFA </a> </li>
 			<li> <%= link_to "Screenings", screenings_path %> </li>
 			
@@ -10,21 +10,43 @@
 			
 			<% else %>
 			<li> <%= link_to "Projects", projects_path %></li>
-			<li> <%= link_to "Profile", user_path(@me.id) %></li>
-			<li> <%= link_to "Log Out", logout_path %> </li>
-			<li> <%= link_to "Browse Users", users_path %> </li>
+			<li> <%= link_to "Filmmakers", users_path %> </li>
+	<!-- 		<li>
+				<a href="#">Account</a>
+					<ul class = "dropdown"> -->
+						<li> <%= link_to "Profile", user_path(@me.id) %></li>
+						<li> <%= link_to "Log Out", logout_path %> </li>
+		<!-- 			</ul>
+			</li> -->
 			<% end %>
 			
 			<li> 
 				  <%= form_tag("/search", method: "get") do %>
 				  <%= text_field_tag(:search) %>
-				  <%= submit_tag("Search") %>
+				  <%= submit_tag("Search", class: "pure-button") %>
 				  <% end %> 
 			</li>
-
-
 		</ul>
 	</div>
+
+<script>
+YUI({
+    classNamePrefix: 'pure'
+}).use('gallery-sm-menu', function (Y) {
+
+    var horizontalMenu = new Y.Menu({
+        container         : '#menu',
+        sourceNode        : '#std-menu-items',
+        orientation       : 'horizontal',
+        hideOnOutsideClick: false,
+        hideOnClick       : false
+    });
+
+    horizontalMenu.render();
+    horizontalMenu.show();
+
+});
+</script>
 
 	<div class="container">
       <% flash.each do |key, value| %>
