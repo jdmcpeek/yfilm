@@ -13,10 +13,10 @@
          
 
         <%= f.label :name %>
-        <%= f.text_field :name %>
+        <p><%= f.text_field :name %></p>
 
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <p><%= f.text_field :email %></p>
 
         <%= f.label :college %>
           <p><%= f.text_field :college %></p>
@@ -25,10 +25,10 @@
           <p><%= f.text_field :year %></p>
 
         <%= f.label :password %>
-        <%= f.password_field :password %>
+        <p><%= f.password_field :password %></p>
 
         <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation %>
+        <p><%= f.password_field :password_confirmation %></p>
 
           <%= fields_for(@interest) do |ff| %>
             <%= ff.hidden_field :acting, value: '0' %>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 # Add this before filter to set a local variable for the current user from CAS session
 before_filter :getMe, :unless => :skip_login?
 
-# before_filter :getInterest, :unless => :skip_login?
+before_filter :getInterest, :unless => :skip_login?
 
 
  # Prevent CSRF attacks by raising an exception.
@@ -21,9 +21,9 @@ def getMe
   @user = User.new
 end
 
-# def getInterest
-#  	@interest = Interest.find_or_create_by_user_id(@me.id)
-# end
+def getInterest
+ 	@interest = Interest.find_or_create_by_user_id(@user.id)
+end
  
 # hack for skip_before_filter with CAS
 # overwrite this method (with 'true') in any controller you want to skip CAS authentication
