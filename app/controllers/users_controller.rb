@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   end
 
   def new #will need landing page  
-    @me = User.new
+    @user = User.new
   end
 
   def create
      @user = User.new(user_params)
     if @user.save
-      # Handle a successful save.
+      redirect_to @user
     else
       render 'new'
     end
@@ -21,9 +21,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @me = User.find(params[:id])
+    @user = User.find(params[:id])
     @interest.update(interest_params)
-    @me.update(me_params)
+    @user.update(me_params)
     redirect_to user_path
   end
 
@@ -32,8 +32,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @me = User.find(params[:id])
-    @interest = Interest.find_by(user_id: @me.id)
+    @user = User.find(params[:id])
+    @interest = Interest.find_by(user_id: @user.id)
     @attributes = Interest.column_names
     @attributes.reject! {|item| item =~ /id|user_id|updated_at|created_at/ }
   end

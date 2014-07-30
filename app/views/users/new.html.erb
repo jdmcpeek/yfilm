@@ -9,6 +9,7 @@
    <div class = "pure-form">
 
       <%= form_for(@me) do |f| %>
+      <%= render 'shared/error_messages' %>
          
 
         <%= f.label :name %>
