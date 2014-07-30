@@ -9,22 +9,19 @@
    <div class = "pure-form">
 
       <%= form_for(@me) do |f| %>
-        
+         
 
-          <%= f.label :Full_Name %>
-          <p><%= f.text_field :name %></p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
 
-          <%= f.label :Nick_Name %>
-          <p><%= f.text_field :fname %></p>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
 
-          <%= f.label :Yale_email %>
-          <p><%= f.text_field :email %></p>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
 
-          <%= f.label :college %>
-          <p><%= f.text_field :college %></p>
-
-          <%= f.label :year %>
-          <p><%= f.text_field :year %></p>
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
 
           <%= fields_for(@interest) do |ff| %>
             <%= ff.hidden_field :acting, value: '0' %>

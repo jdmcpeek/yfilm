@@ -11,6 +11,8 @@ root 'static_pages#home'
   get "users/new"
 
   match '/screenings', to: 'static_pages#screenings', via: 'get'
+
+   match '/signup',  to: 'users#new', via: 'get'
   
   match '/screenings/:id', to: 'static_pages#show', via: 'get'
 
