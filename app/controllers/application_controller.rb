@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 # before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
 
 # Add this before filter to set a local variable for the current user from CAS session
-# before_filter :getMe, :unless => :skip_login?
+before_filter :getMe, :unless => :skip_login?
 
 # before_filter :getInterest, :unless => :skip_login?
 
@@ -17,13 +17,9 @@ class ApplicationController < ActionController::Base
 # And their protected methods
 protected
  
-# def getMe
-#   @me = User.find_or_create_by_netid( session[:cas_user] )
-#   if !@me
-#     redirect_to :root
-#     return false
-#   end
-# end
+def getMe
+  @user = User.new
+end
 
 # def getInterest
 #  	@interest = Interest.find_or_create_by_user_id(@me.id)
