@@ -15,12 +15,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    
     @me = User.find(params[:id])
-   
     @interest.update(interest_params)
-  
-
     @me.update(me_params)
     redirect_to user_path
   end

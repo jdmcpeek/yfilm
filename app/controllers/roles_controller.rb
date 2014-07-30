@@ -9,15 +9,12 @@ class RolesController < ApplicationController
   end
 
   def update
-    
-    @r = Role.find(params[:id])
+    @r = Role.find(params[:id]) #change this instance variable to something more descriptive
     @r.update(role_params)
-
     redirect_to project_path(@r.project_id)
-
   end
 
-  def edit
+  def edit #no way for users to edit roles yet. Add this in next iteration.
   end
 
   	private
