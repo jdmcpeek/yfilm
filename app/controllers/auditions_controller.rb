@@ -1,10 +1,10 @@
 class AuditionsController < ApplicationController
-  def new
+  def new 
   	@project = Project.find(params[:project])
   	@audition = Audition.new(project_id: params[:project])
   end
 
-  def create
+  def create 
   	@audition = Audition.create(audition_params)
 
     if @audition.role_id == nil 
@@ -14,7 +14,7 @@ class AuditionsController < ApplicationController
     end
   end
 
-  def show
+  def show #individual project page
 
   	@audition
     @project = Project.find(params[:id])
@@ -31,7 +31,7 @@ class AuditionsController < ApplicationController
   def edit
   end
 
-  def update
+  def update #update_params include the user_id of the person auditioning 
     @audition = Audition.find(audition_params[:id])
     @audition.update(audition_params)
 

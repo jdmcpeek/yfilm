@@ -1,25 +1,15 @@
 class ProjectsController < ApplicationController
 
-	# def skip_login? #skip login for static pages yayaayay!
-	# 	true
- #  	end
-
 	def index
 		getMe
 	end
 
-	def search
+	def search #must search with both first and last names currently (search bar). Look into inter-model searching
 		@movie = Project.where(nil) #creates an anonymous scope
 		@movie = @movie.find_project(params[:search]) if params[:search].present?
 		@person = User.where(name: params[:search]) if params[:search].present?
 	end
 
-	# def screenings
-	# 	getMe
-		
-	# end
-
-	
 	def new
 		@me = User.find_or_create_by_netid( session[:cas_user] )
 		@project = @me.projects.new
@@ -31,9 +21,8 @@ class ProjectsController < ApplicationController
 		redirect_to project_path(@project)
 	end
 
-	def show
+	def show #lots of variables available for refactoring. 
 		
-		@me = User.find_or_create_by_netid( session[:cas_user] )
 		@project = Project.find(params[:id])
 		@producer_id = Role.find_by(project_id: @project.id).user_id
 		@producer = User.find_by(id: @producer_id)
@@ -49,23 +38,16 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
-		@me = User.find_or_create_by_netid( session[:cas_user] ) #Possible refactor: create an application helper that calls @me when we need it?
-		@project = @me.projects.find(params[:id])	
+		@project = @me.projects.find(params[:id]) #refactor: create application helper for @project to call before controller functions
 	end
 
-  	def audition
-    
-  	end
-
-	def update
-		@me = User.find_or_create_by_netid( session[:cas_user] )
+	def update 
 		@project = @me.projects.find(params[:id])
 		@project.update(project_params)
 		redirect_to project_path(@project)
 	end
 
 	def destroy
-		@me = User.find_or_create_by_netid( session[:cas_user] )
 		@project = @me.projects.find(params[:id])
 		@project.destroy
 		redirect_to user_path(current_user)
