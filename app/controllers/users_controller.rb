@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   		def me_params
   			params.require(:user).permit( :name, :fname, :lname, :college, :year, 
-                                      :email, :college, :bio, :netid, :image )
+                                      :email, :college, :bio, :netid, :image, :password, :password_confirmation )
   		end
 
       def interest_params
