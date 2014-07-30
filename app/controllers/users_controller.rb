@@ -4,9 +4,16 @@ class UsersController < ApplicationController
   end
 
   def new #will need landing page  
+    @me = User.new
+  end
 
-    @user = User.new
-  
+  def create
+     @user = User.new(user_params)
+    if @user.save
+      # Handle a successful save.
+    else
+      render 'new'
+    end
   end
 
   def edit #edit that particular user
