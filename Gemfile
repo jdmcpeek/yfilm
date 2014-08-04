@@ -21,10 +21,12 @@ gem 'pg'
 gem 'rails_12factor'
 end
 
-#security gems
+#security and authorization
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'devise'
+gem 'cancancan', '~> 1.9'
+
 
 
 # Use SCSS for stylesheets

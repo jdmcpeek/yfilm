@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
 # Add this before filter to force CAS Authentication on all controllers + actions
-before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
+# before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
 
 # Add this before filter to set a local variable for the current user from CAS session
 before_filter :getMe, :unless => :skip_login?
@@ -43,8 +43,8 @@ def signedin?
 	end
 end
 
-def current_user #as inspired by Loide
-	@current_user = User.find_by(netid: session[:cas_user]).id
-end
+# def current_user #as inspired by Loide
+# 	@current_user = User.find_by(netid: session[:cas_user]).id
+# end
 
 end
