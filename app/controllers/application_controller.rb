@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
 
+# A Devise before_action. 'Before_filter' is a deprecated term that means the same thing.
+before_action :authenticate_user!
+
 # Add this before filter to force CAS Authentication on all controllers + actions
 # before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
 
@@ -35,13 +38,14 @@ def skip_login?
   false 
 end
 
-def signedin?
-	if session[:cas_user].nil? 
-	    return false
-	else
-		return true
-	end
-end
+  #must define a new signed in method using Devise
+# def signedin?
+# 	if session[:cas_user].nil? 
+# 	    return false
+# 	else
+# 		return true
+# 	end
+# end
 
 # def current_user #as inspired by Loide
 # 	@current_user = User.find_by(netid: session[:cas_user]).id

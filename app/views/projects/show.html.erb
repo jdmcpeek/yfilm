@@ -27,7 +27,7 @@
 					<p><b>Producer:</b> <%= @producer.name %></p>
 				</div>
 
-					<% if signedin? && current_user == @producer_id %>
+					<% if can? :manage, Project %>
 				<div class = "section authorized">
 					<%= link_to "Edit this project", edit_project_path(@project) %> | 
 					<%= link_to "Delete this project", @project, method: :delete, 
@@ -37,7 +37,7 @@
 				</div>
 				<% end %>
 
-				<% if signedin? && current_user == @producer_id %>
+				<% if can? :manage, Project %>
 							<div class = "section authorized">
 								<p> ADD ROLES </p>
 
@@ -81,7 +81,7 @@
 								<% @user = User.find(r.user_id) %> <%= @user.name %>
 								<% end %>
 
-						<% if signedin? && current_user == @producer_id %>
+						<% if can? :manage, Project %>
 						<div class = "authorized">
 								<% auditions = @project.auditions %>
 								<% array = [] %>
@@ -100,7 +100,7 @@
 					<% end %>
 
 
-						<% if signedin? %>
+						<% if user_signed_in? %>
 
 								<%= link_to "Sign up for auditions!", "/projects/#{@project.id}/auditions", class: "pure-button" %>
 						<% end %>
@@ -122,7 +122,7 @@
 								<% end %>
 							
 
-							<% if signedin? && current_user == @producer_id %>
+							<% if can? :manage, Project %>
 							<div class = "authorized">
 								<% choose_crew = @project.auditions.where(:when => nil) %>
 								<% choose_crew_array = [] %>
@@ -139,7 +139,7 @@
 						<% end %> </p>
 					<% end %>
 
-							<% if signedin? %>
+							<% if user_signed_in? %>
 
 								<% crew_roles = @project.roles.where(cast: false) %>
 								<% crew_role_array = [] %>

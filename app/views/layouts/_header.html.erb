@@ -5,7 +5,7 @@
 			<li><a href="/">YFA </a> </li>
 			<li> <%= link_to "Screenings", screenings_path %> </li>
 			
-			<% if !signedin? %>
+			<% if !user_signed_in? %>
 			<li> <%= link_to "Log In", new_user_path %> </li>
 			
 			<% else %>
@@ -20,8 +20,11 @@
 				  <%= submit_tag("Search", class: "pure-button") %>
 				  <% end %> 
 			</li>
-			<% if signedin? %>
-			<li> <%= link_to "Log Out", logout_path %> </li>
+			<% if user_signed_in? %>
+			<li> <%= link_to "Log out", destroy_user_session_path, :method => :delete  %> </li>
+
+		<%# TODO: ADD ADMIN-SPECIFIC BUTTON TO ALLOW WEBMASTER MANAGERIAL CONTROL %>
+
 			<% end %>
 		</ul>
 	</div>

@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
   		@role = @project.roles.build
   		@audition = @project.auditions.build
 
-		if signedin? && current_user == @producer_id
+		if user_signed_in? && current_user == @producer_id
 			@me = User.find_or_create_by_netid( session[:cas_user] )
 			@project = @me.projects.find(params[:id])	
   			@role = @project.roles.build

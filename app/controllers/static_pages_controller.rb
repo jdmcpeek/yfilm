@@ -1,8 +1,10 @@
 class StaticPagesController < ApplicationController
-  
-  def skip_login? #skip login for static pages yayaayay!
-	 true
-  end
+ 
+  skip_before_action :authenticate_user!
+
+  # def skip_login? #skip login for static pages yayaayay!
+	 # true
+  # end
 
   def home
   	getMe
