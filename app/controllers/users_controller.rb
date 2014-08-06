@@ -4,10 +4,16 @@ class UsersController < ApplicationController
   end
 
   def new #will need landing page  
-  
-    if @me.email && @me.college && @me.year
-      redirect_to user_path(@me.id)
-    end
+    # if @me.email && @me.college && @me.year
+    #   redirect_to user_path(@me.id)
+    # end
+    @me = User.new
+    @interest = User.build_interest
+
+  end
+
+  def create
+    @me = User.create(me_params)
   end
 
   def edit #edit that particular user

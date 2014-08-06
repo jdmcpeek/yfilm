@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   # Associations
   has_many :roles
   has_many :projects, through: :roles
-  has_one :interest
+  has_one :interest, inverse_of: :user
   has_many :auditions
   mount_uploader :image, ImageUploader
 
