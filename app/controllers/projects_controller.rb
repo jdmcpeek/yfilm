@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 	def index
-		getMe
+		@me = current_user
 	end
 
 	def search #must search with both first and last names currently (search bar). Look into inter-model searching
@@ -11,12 +11,12 @@ class ProjectsController < ApplicationController
 	end
 
 	def new
-		@me = User.find_or_create_by_netid( session[:cas_user] )
+		@me = current_user
 		@project = @me.projects.new
 	end
 
 	def create
-		@me = User.find_or_create_by_netid( session[:cas_user] )
+		@me = current_user
 		@project = @me.projects.create(project_params)
 		redirect_to project_path(@project)
 	end
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
   		@audition = @project.auditions.build
 
 		if user_signed_in? && current_user == @producer_id
-			@me = User.find_or_create_by_netid( session[:cas_user] )
+			@me = current_user
 			@project = @me.projects.find(params[:id])	
   			@role = @project.roles.build
   		end

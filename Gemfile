@@ -13,7 +13,18 @@ gem "auto_html"
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-gem 'sqlite3'
+	gem 'sqlite3'
+	gem 'better_errors'
+	gem 'binding_of_caller', :platforms=>[:mri_21]
+	gem 'guard-bundler'
+	gem 'guard-rails'
+	gem 'guard-rspec'
+	gem 'quiet_assets'
+	gem 'rails_layout'
+	gem 'rb-fchange', :require=>false
+	gem 'rb-fsevent', :require=>false
+	gem 'rb-inotify', :require=>false
+	gem 'spring'
 end
 
 group :production do

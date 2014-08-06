@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     #   redirect_to user_path(@me.id)
     # end
     @me = User.new
-    @interest = User.build_interest
+    @interest = @me.build_interest
 
   end
 
