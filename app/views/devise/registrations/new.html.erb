@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<%= render 'layouts/header' %>
+<div class="pure-g">
+  <div class="pure-u-1 container">
+   <div class = "pure-form">
+		<h1>Sign Up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -16,3 +20,9 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+	</div>
+  </div>
+</div>
+
+<%= render "layouts/footer" %>
