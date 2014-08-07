@@ -7,7 +7,7 @@ before_action :authenticate_user!
 # before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
 
 # Add this before filter to set a local variable for the current user from CAS session
-before_filter :getMe, :unless => :skip_login?
+# before_filter :getMe, :unless => :skip_login?
 
 # before_filter :getInterest, :unless => :skip_login?
 

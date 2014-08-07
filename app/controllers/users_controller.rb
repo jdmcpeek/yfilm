@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def create
     @me = User.create(me_params)
+      # using one of the handy has_one associations to directly correlate the two objects
+    @interest = @me.create_interest(interest_params)
   end
 
   def edit #edit that particular user
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
 
   def show
     @me = User.find(params[:id])
-    @interest = Interest.find_by(user_id: @me.id)
+    @interest = @me.interest
     @attributes = Interest.column_names
     @attributes.reject! {|item| item =~ /id|user_id|updated_at|created_at/ }
   end

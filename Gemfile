@@ -12,10 +12,10 @@ gem 'carrierwave'
 gem "auto_html"
 
 # Use sqlite3 as the database for Active Record
-group :development, :test do
+group :development do
 	gem 'sqlite3'
 	gem 'better_errors'
-	gem 'binding_of_caller', :platforms=>[:mri_21]
+	gem 'binding_of_caller'
 	gem 'guard-bundler'
 	gem 'guard-rails'
 	gem 'guard-rspec'
