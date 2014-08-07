@@ -7,7 +7,7 @@ before_action :authenticate_user!
 # before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
 
 # Add this before filter to set a local variable for the current user from CAS session
-# before_filter :getMe, :unless => :skip_login?
+before_filter :getMe, :unless => :skip_login?
 
 # before_filter :getInterest, :unless => :skip_login?
 
@@ -20,13 +20,13 @@ before_action :authenticate_user!
 # And their protected methods
 protected
   # getMe should be refactored out. We should be able to create users the normal way, because now there is a difference between signing in and signing up
-# def getMe
-#   @me = User.find_or_create_by_netid( session[:cas_user] )
-#   if !@me
-#     redirect_to :root
-#     return false
-#   end
-# end
+def getMe
+  @me = User.find_or_create_by_netid( session[:cas_user] )
+  if !@me
+    redirect_to :root
+    return false
+  end
+end
 
 # def getInterest
 #  	@interest = Interest.find_or_create_by_user_id(@me.id)
