@@ -13,7 +13,7 @@ class Ability
           elsif ability == 'normal'
               #should users be able to 'manage' their own profiles? That includes every action, including create. Probably not.
             can :manage, Project, :producer => user.id
-            can :ru, User, :id => user.id 
+            can :manage, User, :id => user.id 
           else 
             can :read, Project
 
