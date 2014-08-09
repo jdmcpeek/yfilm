@@ -11,7 +11,7 @@
 			<% else %>
 			<li> <%= link_to "Projects", projects_path %></li>
 			<li> <%= link_to "Filmmakers", users_path %> </li>
-			<li> <%= link_to "Profile", user_path(current_user.id) %></li>
+			<li> <%= link_to "Profile", user_path(current_user) %></li>
 			<% end %>
 			
 			<li> 
