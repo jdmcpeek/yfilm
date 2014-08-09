@@ -8,6 +8,8 @@ class Project < ActiveRecord::Base
 	has_many :auditions
 	mount_uploader :image, ImageUploader
 
+	accepts_nested_attributes_for :auditions, :reject_if => :all_blank, :allow_destroy => true
+
 	auto_html_for :video do
 	    html_escape
 	    image

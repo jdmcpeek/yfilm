@@ -1,0 +1,15 @@
+= form_for @project do |f|
+
+	#auditions
+	= f.simple_fields_for :auditions do |audition|
+      = render 'audition_fields', :f => audition
+    .links
+      = link_to_add_association 'add audition', f, :auditions
+  = f.submit
+
+	%p Datetime: <input id="datetimepicker" name="audition[when]" type="text"> 
+
+			<%= f.hidden_field :project_id, value: params[:project]  %>
+			<%= f.submit "Add audition", class: "pure-button" %>
+		
+		<% end %>
