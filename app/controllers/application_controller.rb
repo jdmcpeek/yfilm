@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   # allows more perameters
-before_action :configure_permitted_parameters, if: :devise_controller?
+
 # A Devise before_action. 'Before_filter' is a deprecated term that means the same thing.
 before_action :authenticate_user!
+
+before_action :configure_permitted_parameters, if: :devise_controller?
 
 # Add this before filter to force CAS Authentication on all controllers + actions
 # before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
@@ -22,7 +24,7 @@ before_action :authenticate_user!
 protected
 
  def configure_permitted_parameters
-   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :fname, :bio, :college, :year, :email) }
+   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :fname, :bio, :college, :year, :email, :interests, :password, :password_confirmation) }
  end
 
   # getMe should be refactored out. We should be able to create users the normal way, because now there is a difference between signing in and signing up

@@ -14,6 +14,7 @@ class Ability
               #should users be able to 'manage' their own profiles? That includes every action, including create. Probably not.
             can :manage, Project, :producer => user.id
             can :manage, User, :id => user.id 
+            can :manage, Interest, :user_id => user.id
           else 
             can :read, Project
 

@@ -30,6 +30,17 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+    <%= fields_for :interest do |ff| %>
+            <%= ff.hidden_field :acting, value: '0' %>
+            <%= ff.hidden_field :directing, value: '0' %>
+            <%= ff.hidden_field :editing, value: '0' %>
+            <%= ff.hidden_field :camerawork, value: '0' %>
+            <%= ff.hidden_field :costumes, value: '0' %>
+            <%= ff.hidden_field :cinematography, value: '0' %>
+            <%= ff.hidden_field :sound, value: '0' %>
+          
+          <% end %>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
