@@ -9,8 +9,11 @@ gem 'rubycas-client'
 # For Image uploads. On OSX, also need to: 'brew install imagemagick' in terminal
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
-
+	
+	#cocoon stuff
 gem "auto_html"
+gem 'haml'
+gem 'cocoon'
 
 # Use sqlite3 as the database for Active Record
 group :development do
