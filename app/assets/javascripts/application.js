@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.turbolinks
-//= require_tree .
 //= require cocoon
+//= require_tree .
+

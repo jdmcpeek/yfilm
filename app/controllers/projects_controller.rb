@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
 
 	def edit
 		@project = current_user.projects.find(params[:id]) #refactor: create application helper for @project to call before controller functions
+		
 	end
 
 	def update 

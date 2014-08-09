@@ -19,13 +19,14 @@ class UsersController < ApplicationController
   end
 
   def edit #edit that particular user
-    
+    @me = current_user
+    @interest = @me.create_interest
   end
 
   def update
-    @me = User.find(params[:id])
+    @interest = current_user.interest
     @interest.update(interest_params)
-    @me.update(me_params)
+    current_user.update(me_params)
     redirect_to user_path
   end
 
