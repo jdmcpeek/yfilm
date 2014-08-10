@@ -1,3 +1,3 @@
 .nested-fields
-  = f.input :when, :as => :datetimepicker
-  = link_to_remove_association "remove task", f
+  = f.input :when, label: "When will it be?  ", :as => :datetime
+  = link_to_remove_association "remove slot", f

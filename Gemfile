@@ -14,6 +14,7 @@ gem 'carrierwave'
 gem "auto_html"
 gem 'haml'
 gem 'cocoon'
+gem 'simple_form'
 
 # Use sqlite3 as the database for Active Record
 group :development do

@@ -8,7 +8,7 @@
 		<div class = "pure-form">
 	
 			<%= form_for(@project) do |f| %>
-				<%= f.hidden_field :id, value: @me.id %>
+				<%= f.hidden_field :user_id, value: current_user %>
 
 				<%= f.text_field :title, :placeholder => "Project title", :class => "pure-input" %>
 
