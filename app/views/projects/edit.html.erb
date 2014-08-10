@@ -6,8 +6,6 @@
 		<h1> Edit "<%= @project.title %>" project </h1>
 
 		<div class = "pure-form">
-	
-			<%= current_user %>
 
 			<%= form_for(@project) do |f| %>
 				<%= f.hidden_field :id, value: current_user %>

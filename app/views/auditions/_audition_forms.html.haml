@@ -3,5 +3,5 @@
 	= f.simple_fields_for :auditions do |audition|
 		= render 'audition_fields', :f => audition             
 		.links 												   
-	%p= link_to_add_association 'add audition', f, :auditions   
+	%div#add= link_to_add_association 'add audition', f, :auditions   
 	%p= f.submit

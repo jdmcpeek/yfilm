@@ -5,7 +5,7 @@
 
     <div class = "container">
             <div class = "pure-u-1-2 left-column">
-                <h1 class= "left_align"><% if @user == current_user %> Hello, <% end %> <%= @user.fname%> </h1> <%= current_user %>
+                <h1 class= "left_align"><% if @user == current_user %> Hello, <% end %> <%= @user.fname%> </h1> 
                 <div class = "profile_image">
                     <%= image_tag @user.image_url(:thumb).to_s %>
                 </div>
@@ -13,7 +13,7 @@
                 <p><%= @user.year %> </p>
                 <p><%= mail_to @user.email, "Email me!" %></p>
 
-            <% if can? :manage, User, :id => current_user %>
+            <% if can? :update, @user %>
                 <div class = "section authorized">
                     <p> <%= link_to "Edit your information, friend!", edit_user_path(current_user) %></p>
                 </div>

@@ -19,8 +19,8 @@ class UsersController < ApplicationController
   end
 
   def edit #edit that particular user
-    @user = current_user
-    @interest = current_user.create_interest
+    @me = current_user
+    @interest = @me.create_interest
   end
 
   def update
