@@ -7,20 +7,20 @@ class UsersController < ApplicationController
     # if @me.email && @me.college && @me.year
     #   redirect_to user_path(@me.id)
     # end
-    @me = User.new
-    @interest = @me.build_interest
+    @user = User.new
+    @interest = @user.build_interest
 
   end
 
   def create
-    @me = User.create(me_params)
+    @user = User.create(me_params)
       # using one of the handy has_one associations to directly correlate the two objects
-    @interest = @me.create_interest(interest_params)
+    @interest = @user.create_interest(interest_params)
   end
 
   def edit #edit that particular user
-    @me = current_user
-    @interest = @me.create_interest
+    @user = current_user
+    @interest = current_user.create_interest
   end
 
   def update
@@ -35,8 +35,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @me = User.find(params[:id])
-    @interest = @me.interest
+    @user = User.find(params[:id])
+    @interest = @user.interest
     @attributes = Interest.column_names
     @attributes.reject! {|item| item =~ /id|user_id|updated_at|created_at/ }
   end

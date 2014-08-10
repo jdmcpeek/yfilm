@@ -1,8 +1,7 @@
 = simple_form_for @project do |f|
-	%h3 Auditions
 	#auditions
 	= f.simple_fields_for :auditions do |audition|
-		= render 'audition_fields', :f => audition
-		.links
-			= link_to_add_association 'add audition', f, :auditions
-	= f.submit
+		= render 'audition_fields', :f => audition             
+		.links 												   
+	%p= link_to_add_association 'add audition', f, :auditions   
+	%p= f.submit

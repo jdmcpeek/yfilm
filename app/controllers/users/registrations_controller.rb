@@ -2,14 +2,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
 
   	super
-    	@me = User.new
+    	@user = User.new
     	# @interest = @me.build_interest
 
   end
 
   def create
     super
-     	@me = User.create(me_params)
+     	@user = User.create(me_params)
       # using one of the handy has_one associations to directly correlate the two objects
    	 	# @interest = @me.create_interest(interest_params)
    	 	

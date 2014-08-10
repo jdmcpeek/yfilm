@@ -5,9 +5,11 @@
     <div class = "pure-u-1 container">
         <h1> EDIT PROFILE </h1>
 
+        <%= current_user %>
+
 		<div class = "pure-form">
 	
-			<%= form_for(@me) do |f| %>
+			<%= form_for(@user) do |f| %>
 
 			<p> 
 			<%= f.label "YOUR HEADSHOT" %> <br>
@@ -36,10 +38,10 @@
 
 			<h3>What are your interests?</h3>
 
-            <%= f.hidden_field :id, value: @me.id %>
+            <%= f.hidden_field :id, value: @user %>
             <!-- TAKE A LOOK AT THIS ^^ -->
 
-            <%= fields_for(@me.interest) do |ff| %>
+            <%= fields_for(@user.interest) do |ff| %>
                 <p><%= ff.label "acting" %>
                 <%= ff.check_box :acting %></p>
 

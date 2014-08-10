@@ -21,6 +21,8 @@ root 'static_pages#home'
 
   match 'users/:id/edit', to: 'users#edit', via: 'get'
 
+  match 'users/:id', to: 'users#show', via: 'get'
+
 
   match '/projects/:id/auditions', to: 'auditions#show', via: 'get'
 

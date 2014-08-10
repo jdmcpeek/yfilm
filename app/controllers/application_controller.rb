@@ -28,13 +28,7 @@ protected
  end
 
   # getMe should be refactored out. We should be able to create users the normal way, because now there is a difference between signing in and signing up
-def getMe
-  @me = User.find_or_create_by_netid( session[:cas_user] )
-  if !@me
-    redirect_to :root
-    return false
-  end
-end
+
 
 # def getInterest
 #  	@interest = Interest.find_or_create_by_user_id(@me.id)
