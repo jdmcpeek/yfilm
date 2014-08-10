@@ -3,7 +3,7 @@ class RolesController < ApplicationController
   end
 
   def create
-  	@project = @me.projects.find(role_params[:id])
+  	@project = current_user.projects.find(role_params[:id])
   	@role = @project.roles.create(title: role_params[:title], cast: role_params[:cast])
   	redirect_to project_path(@project)
   end

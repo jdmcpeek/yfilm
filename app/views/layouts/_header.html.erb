@@ -5,13 +5,14 @@
 			<li><a href="/">YFA </a> </li>
 			<li> <%= link_to "Screenings", screenings_path %> </li>
 			
-			<% if !signedin? %>
-			<li> <%= link_to "Log In", new_user_path %> </li>
+			<% if !user_signed_in? %>
+			<li> <%= link_to "Log In", new_user_session_path %> </li> <%# must direct this to a different path %>
 			
-			<% else %>
+			<% elsif user_signed_in? %>
 			<li> <%= link_to "Projects", projects_path %></li>
 			<li> <%= link_to "Filmmakers", users_path %> </li>
-			<li> <%= link_to "Profile", user_path(@me.id) %></li>
+			<li> <%= link_to "Profile", user_path(current_user) %></li>
+
 			<% end %>
 			
 			<li> 
@@ -20,8 +21,11 @@
 				  <%= submit_tag("Search", class: "pure-button") %>
 				  <% end %> 
 			</li>
-			<% if signedin? %>
-			<li> <%= link_to "Log Out", logout_path %> </li>
+			<% if user_signed_in? %>
+			<li> <%= link_to "Log out", destroy_user_session_path, :method => :delete  %> </li>
+
+		<%# TODO: ADD ADMIN-SPECIFIC BUTTON TO ALLOW WEBMASTER MANAGERIAL CONTROL %>
+
 			<% end %>
 		</ul>
 	</div>
@@ -45,10 +49,6 @@ YUI({
 });
 </script>
 
-	<div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-  	</div>
+
 
 </div>

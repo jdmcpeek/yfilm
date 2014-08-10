@@ -1,0 +1,53 @@
+
+<div class="pure-g">
+  <div class="pure-u-1 container">
+   <div class = "pure-form">
+		<h1>Sign Up</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+   <div><%= f.label :Full_Name %><br>
+     <%= f.text_field :name %></div>
+
+    <div><%= f.label :Nick_Name %><br>
+    <%= f.text_field :fname %></div>
+
+    <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+    <div><%= f.label :college %><br>
+    <%= f.text_field :college %></div>
+
+    <div><%= f.label :year %><br>
+    <%= f.text_field :year %></div>
+
+ 
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+    <%= fields_for :interest do |ff| %>
+            <%= ff.hidden_field :acting, value: '0' %>
+            <%= ff.hidden_field :directing, value: '0' %>
+            <%= ff.hidden_field :editing, value: '0' %>
+            <%= ff.hidden_field :camerawork, value: '0' %>
+            <%= ff.hidden_field :costumes, value: '0' %>
+            <%= ff.hidden_field :cinematography, value: '0' %>
+            <%= ff.hidden_field :sound, value: '0' %>
+          
+          <% end %>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+	</div>
+  </div>
+</div>
+
+

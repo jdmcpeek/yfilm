@@ -11,3 +11,58 @@
  *= require_self
  *= require_tree .
  */
+
+
+/* flash */
+
+
+
+
+.alert-error ul {
+    background-color: #B7B9BB;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    -webkit-border-radius: 10px;
+    padding: 10px;
+    padding-left: 20px;
+   
+ }
+
+.alert-alert ul {
+    background-color: #B7B9BB;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    -webkit-border-radius: 10px;
+      padding: 10px;
+      padding-left: 20px;
+
+
+       
+
+ }
+
+.alert-success ul {
+    background-color: #B7B9BB;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    -webkit-border-radius: 10px;
+      padding: 10px;
+      padding-left: 20px;
+     
+
+ }
+ 
+.alert-notice ul {
+    background-color: #B7B9BB;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    -webkit-border-radius: 10px;
+      padding: 10px;
+      padding-left: 20px;
+     
+
+ }

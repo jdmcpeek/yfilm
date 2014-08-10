@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 	def index
-		getMe
+		
 	end
 
 	def search #must search with both first and last names currently (search bar). Look into inter-model searching
@@ -11,13 +11,13 @@ class ProjectsController < ApplicationController
 	end
 
 	def new
-		@me = User.find_or_create_by_netid( session[:cas_user] )
-		@project = @me.projects.new
+		
+		@project = current_user.projects.new
 	end
 
 	def create
-		@me = User.find_or_create_by_netid( session[:cas_user] )
-		@project = @me.projects.create(project_params)
+
+		@project = current_user.projects.create(project_params)
 		redirect_to project_path(@project)
 	end
 
@@ -29,26 +29,26 @@ class ProjectsController < ApplicationController
   		@role = @project.roles.build
   		@audition = @project.auditions.build
 
-		if signedin? && current_user == @producer_id
-			@me = User.find_or_create_by_netid( session[:cas_user] )
-			@project = @me.projects.find(params[:id])	
+		if can? :manage, Project, :producer => current_user
+			@project = current_user.projects.find(params[:id])	
   			@role = @project.roles.build
   		end
 		#NOTE: find_by(params[:id]) doesn't work! @me.projects.find_by(id: params[:id]) OR @me.projects.find(params[:id]) are equivalent syntax.
 	end
 
 	def edit
-		@project = @me.projects.find(params[:id]) #refactor: create application helper for @project to call before controller functions
+		@project = current_user.projects.find(params[:id]) #refactor: create application helper for @project to call before controller functions
+		
 	end
 
 	def update 
-		@project = @me.projects.find(params[:id])
+		@project = current_user.projects.find(params[:id])
 		@project.update(project_params)
 		redirect_to project_path(@project)
 	end
 
 	def destroy
-		@project = @me.projects.find(params[:id])
+		@project = current_user.projects.find(params[:id])
 		@project.destroy
 		redirect_to user_path(current_user)
 	end
@@ -56,7 +56,10 @@ class ProjectsController < ApplicationController
   private
 
 	def project_params
-        params.require(:project).permit(:title, :genre, :description, :dates, :producer, :location, :image, :remote_image_url, :video, :video_html)
+        params.require(:project).permit(:title, :genre, :description, :dates, :producer,
+        					 :location, :image, :remote_image_url, :video, :video_html,
+        					 auditions_attributes: [:id, :when, :project_id, :user_id,
+        					 :user_name, :role_id, :_destroy])
     end
 
 end

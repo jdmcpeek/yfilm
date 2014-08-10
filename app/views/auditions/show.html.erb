@@ -1,4 +1,4 @@
-<%= render 'layouts/header' %>
+
 
 <div class = "pure-g">
 	<div class = "pure-u-1 container">
@@ -9,17 +9,17 @@
 
 					<% if signedin? && current_user == @producer_id && a.user_id != nil %>
 						<p>	<%= a.when.strftime("%A, %B %d, %Y at %l%p") %>  |  <%= link_to a.user_name, user_path(a.user_id) %> </p>
-					<% end %>
+				
 
 
-					<% if a.user_id == nil %>
+					<% elsif a.user_id == nil %>
 							<p>
 								<%= a.when.strftime("%A, %B %d, %Y at %l%p") %>
 								
 								<%= form_for(a) do |t| %>
 									<%= t.hidden_field :id, value: a.id %>
-									<%= t.hidden_field :user_id, value: @me.id %>
-									<%= t.hidden_field :user_name, value: @me.name %>
+									<%= t.hidden_field :user_id, value: current_user %>
+									<%= t.hidden_field :user_name, value: current_user %>
 								<%= t.submit "Sign up", class: "pure-button" %>
 								<% end %>
 							</p>
@@ -33,4 +33,4 @@
 	</div>
 </div>
 
-<%= render "layouts/footer" %>
+

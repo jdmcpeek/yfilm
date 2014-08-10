@@ -1,9 +1,11 @@
-<%= render "layouts/header" %>
+
 
 <div class = "pure-g">
 
     <div class = "pure-u-1 container">
         <h1> EDIT PROFILE </h1>
+
+      
 
 		<div class = "pure-form">
 	
@@ -36,7 +38,7 @@
 
 			<h3>What are your interests?</h3>
 
-            <%= f.hidden_field :id, value: @me.id %>
+            <%= f.hidden_field :id, value: @me %>
             <!-- TAKE A LOOK AT THIS ^^ -->
 
             <%= fields_for(@me.interest) do |ff| %>
@@ -75,5 +77,5 @@
     </div>
 </div>
 
-<%= render "layouts/footer" %>
+
 

@@ -1,4 +1,4 @@
-<%= render "layouts/header" %>
+
 
 <div class = "pure-g">
 
@@ -6,11 +6,9 @@
 		<h1> Edit "<%= @project.title %>" project </h1>
 
 		<div class = "pure-form">
-	
-			<%= @me.id %>
 
 			<%= form_for(@project) do |f| %>
-				<%= f.hidden_field :id, value: @me.id %>
+				<%= f.hidden_field :id, value: current_user %>
 
 				<%= f.text_field :title, :placeholder => "Project title", :class => "pure-input" %>
 
@@ -43,4 +41,4 @@
 	</div>
 </div>
 
-<%= render "layouts/footer" %>
+

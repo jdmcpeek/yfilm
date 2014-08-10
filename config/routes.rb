@@ -1,5 +1,6 @@
 YFA::Application.routes.draw do
 
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
 resources :users
 resources :interests
 resources :projects
@@ -19,6 +20,8 @@ root 'static_pages#home'
   match '/search', to: 'projects#search', via: 'post'
 
   match 'users/:id/edit', to: 'users#edit', via: 'get'
+
+  match 'users/:id', to: 'users#show', via: 'get'
 
 
   match '/projects/:id/auditions', to: 'auditions#show', via: 'get'

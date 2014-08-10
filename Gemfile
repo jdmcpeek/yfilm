@@ -2,18 +2,34 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.8'
+gem 'bootstrap-sass', '2.3.2.0'
 
 gem 'rubycas-client'
 
 # For Image uploads. On OSX, also need to: 'brew install imagemagick' in terminal
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
-
+	
+	#cocoon stuff
 gem "auto_html"
+gem 'haml'
+gem 'cocoon'
+gem 'simple_form'
 
 # Use sqlite3 as the database for Active Record
-group :development, :test do
-gem 'sqlite3'
+group :development do
+	gem 'sqlite3'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'guard-bundler'
+	gem 'guard-rails'
+	gem 'guard-rspec'
+	gem 'quiet_assets'
+	gem 'rails_layout'
+	gem 'rb-fchange', :require=>false
+	gem 'rb-fsevent', :require=>false
+	gem 'rb-inotify', :require=>false
+	gem 'spring'
 end
 
 group :production do
@@ -21,9 +37,12 @@ gem 'pg'
 gem 'rails_12factor'
 end
 
-#security gems
+#security and authorization
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
+gem 'devise'
+gem 'cancancan', '~> 1.9'
+
 
 
 # Use SCSS for stylesheets
@@ -43,6 +62,7 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
