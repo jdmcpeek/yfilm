@@ -1,0 +1,681 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+/* flash */
+
+
+
+
+
+.alert-error ul {
+    background-color: #B7B9BB;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    -webkit-border-radius: 10px;
+    padding: 10px;
+    padding-left: 20px;
+   
+ }
+
+.alert-alert ul {
+    background-color: #B7B9BB;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    -webkit-border-radius: 10px;
+      padding: 10px;
+      padding-left: 20px;
+
+
+       
+
+ }
+
+.alert-success ul {
+    background-color: #B7B9BB;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    -webkit-border-radius: 10px;
+      padding: 10px;
+      padding-left: 20px;
+     
+
+ }
+ 
+.alert-notice ul {
+    background-color: #B7B9BB;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    -webkit-border-radius: 10px;
+      padding: 10px;
+      padding-left: 20px;
+     
+
+ }
+/* project show page styling */
+/* line 4, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.title_bar {
+  height: 100px;
+}
+
+/* line 8, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.left-column {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-right: 50px;
+  width: 400px;
+}
+
+/* line 17, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.right-column {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  width: 400px;
+}
+
+/* line 25, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project_title {
+  font-size: 50px;
+  text-align: left;
+}
+
+/* line 30, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project_image {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 37, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project_image img {
+  width: 100%;
+}
+
+/* line 41, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project_description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* line 48, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.authorized {
+  margin-top: 10px;
+  border: 2px solid #B7B9BB;
+  padding: 10px;
+}
+
+/* line 55, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+#activity {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  min-height: 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+/* line 63, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.section {
+  margin-top: 50px;
+  border-top: 2px solid #B7B9BB;
+  padding-top: 10px;
+}
+
+/* Index page styling */
+/* line 72, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.projects_container {
+  position: relative;
+  left: 50%;
+  margin-left: -450px;
+  width: 900px;
+  margin-top: 25px;
+  top: 0px;
+  bottom: 0px;
+  padding-bottom: 25px;
+}
+
+/* line 83, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project {
+  border: 2px solid #B7B9BB;
+  position: inline-block;
+  width: 279px;
+  height: 400px;
+  margin: 7px;
+  background-color: #0F161D;
+  overflow: hidden;
+}
+
+/* line 93, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project_text {
+  margin-top: -10px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 17%;
+}
+
+/* line 102, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project img {
+  margin-left: -5%;
+  height: 60%;
+}
+
+/* line 107, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project h4 {
+  font-size: 30px;
+}
+
+/* line 111, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.genre {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding: 15px;
+  border-top: 2px solid #B7B9BB;
+}
+
+/* line 122, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project a:link {
+  color: #B7B9BB;
+  text-decoration: none;
+}
+
+/* line 127, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project a:visited {
+  color: #B7B9BB;
+}
+
+/* line 131, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/projects.css.scss */
+.project a:hover {
+  color: #0066FF;
+}
+/* line 1, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+body {
+  background-image: url(/noir_background.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #B7B9BB;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* screening index page */
+/* line 16, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening {
+  border: 2px solid #B7B9BB;
+  position: inline-block;
+  width: 800px;
+  height: 300px;
+  margin: 7px;
+  background-color: #0F161D;
+  overflow: hidden;
+}
+
+/* line 26, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening_text {
+  margin-top: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 17%;
+}
+
+/* line 34, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening img {
+  width: 100%;
+}
+
+/* line 38, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening_image {
+  height: 60%;
+  overflow: hidden;
+}
+
+/* line 43, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening h4 {
+  font-size: 30px;
+}
+
+/* line 47, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.genre {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding: 15px;
+  border-top: 2px solid #B7B9BB;
+}
+
+/* line 58, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening a:link {
+  color: #B7B9BB;
+  text-decoration: none;
+}
+
+/* line 63, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening a:visited {
+  color: #B7B9BB;
+}
+
+/* line 67, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening a:hover {
+  color: #0066FF;
+}
+
+/* screening show page styling */
+/* line 75, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 80, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+iframe {
+  width: 100%;
+  height: 90%;
+}
+
+/* line 85, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.screening_title {
+  font-size: 50px;
+  text-align: center;
+}
+
+/* line 90, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#crew h2 {
+  text-align: center;
+}
+
+/* line 93, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#cast h2 {
+  text-align: center;
+}
+
+/* line 97, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.top_half {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* line 102, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.project_image {
+  margin-top: 25px;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* line 109, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.video_image {
+  margin-top: 25px;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+/* line 116, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.project_description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* line 123, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.bottom_half {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* line 130, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+/* line 138, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: left;
+  font-size: 25px;
+}
+
+/* line 147, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* line 155, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+input {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 161, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+a:link {
+  color: #B7B9BB;
+}
+
+/* line 164, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+a:visited {
+  color: #B7B9BB;
+}
+
+/* line 167, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+a:hover {
+  color: #0066FF;
+}
+
+/* line 171, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.pure-button {
+  background-color: #0066FF;
+  color: white;
+}
+
+/* line 176, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.container {
+  position: relative;
+  left: 50%;
+  margin-left: -425px;
+  width: 850px;
+  margin-top: 25px;
+  top: 0px;
+  bottom: 0px;
+  padding-bottom: 25px;
+}
+
+/* Footer styling */
+/* line 189, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#footer {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  margin-top: 50px;
+}
+
+/* line 197, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.footer-text {
+  position: relative;
+  left: 50%;
+  margin-left: -425px;
+  width: 850px;
+  border-top: 1px solid #6F7377;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  padding-top: 10px;
+  color: #6F7377;
+}
+
+/* Menu styling */
+/* line 211, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#menu {
+  background-color: #ECEDED;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* line 221, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#menu .pure-button {
+  background-color: #B2B5B7;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: -10px;
+}
+
+/* line 232, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#menu a:link {
+  color: #0066FF;
+}
+
+/* line 236, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#menu a:visited {
+  color: #0066FF;
+}
+
+/* line 240, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#menu a:hover {
+  border: 1px solid #0066FF;
+  color: #0066FF;
+  bottom: 0px;
+}
+
+/* Announcements styling */
+/* line 248, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.announcements {
+  height: 150px;
+}
+
+/* line 252, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.announcements.titlebar {
+  text-align: left;
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: .5;
+  color: #B7B9BB;
+}
+
+/* line 259, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.announcements.titlebar h1 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 64px;
+  font-weight: 300;
+  text-align: left;
+}
+
+/* line 268, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.announcements.titlebar h4 {
+  letter-spacing: 1px;
+  font-size: 35px;
+  font-weight: 300;
+  color: #B7B9BB;
+  line-height: .1;
+}
+
+/* Slideshow styling #9FA2A5 #6F7377*/
+/* line 279, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.slideshow_container {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  background-color: #0f161d;
+}
+
+/* line 286, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.start {
+  position: relative;
+  left: 50%;
+  margin-left: -450px;
+}
+
+/* line 292, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.frame {
+  position: absolute;
+  left: 50%;
+  margin-left: -425px;
+  width: 844px;
+  height: 350px;
+  border: 3px solid #0066FF;
+  z-index: 1;
+  margin-top: 25px;
+}
+
+/* line 303, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow {
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 312, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow .slide {
+  margin: 0;
+  padding: 0;
+  width: 900px;
+  height: 400px;
+  float: left;
+  position: relative;
+}
+
+/* line 321, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+.slide img {
+  width: 100%;
+  opacity: 85%;
+}
+
+/* line 326, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow .slide .slideText {
+  position: absolute;
+  top: 75px;
+  margin-left: 55px;
+  height: 50px;
+  margin-top: 40px;
+  width: 300px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: .35;
+  z-index: 2;
+}
+
+/* line 341, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow .slide .slideText a:link,
+#slideshow #slideshowWindow .slide .slideText a:visited {
+  color: #0066FF;
+  text-decoration: none;
+}
+
+/* line 346, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow .slide .slideText a:hover {
+  color: #33CCFF;
+}
+
+/* line 350, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow .slide .slideHeader {
+  position: absolute;
+  top: 50px;
+  margin-left: 50px;
+  height: 30px;
+  border: 3px solid #0066FF;
+  padding: 5px 10px 20px 10px;
+  color: #0066FF;
+  font-weight: 400;
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: .35;
+  z-index: 2;
+}
+
+/* line 364, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow .slide .slideText h1 {
+  letter-spacing: .5px;
+  font-size: 50px;
+  line-height: 1;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* line 372, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/static_pages.css.scss */
+#slideshow #slideshowWindow .slide .slideHeader h3 {
+  letter-spacing: 2px;
+  font-size: 18pt;
+}
+/* Profile styling */
+/* line 4, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.profile_image {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 75%;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+/* line 12, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.profile_image img {
+  width: 100%;
+}
+
+/* line 16, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.left_align {
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+/* line 22, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.spacing_button {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* line 27, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.user_list a:link {
+  font-size: 30px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+/* line 35, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.user_list {
+  width: 300px;
+  margin-bottom: 50px;
+}
+
+/* line 40, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.user_thumb {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+/* line 47, /Users/jdmcpeek/Code/YFA_FINAL/app/assets/stylesheets/users.css.scss */
+.user_thumb img {
+  height: 100%;
+}
