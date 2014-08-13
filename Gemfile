@@ -19,7 +19,7 @@ gem 'simple_form'
 # active_admin
 
 gem 'activeadmin', github: 'activeadmin/active_admin'
-  gem "meta_search"
+ 
 
 # Use sqlite3 as the database for Active Record
 group :development do
