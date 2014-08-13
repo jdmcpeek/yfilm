@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804203439) do
+ActiveRecord::Schema.define(version: 20140813040547) do
 
   create_table "auditions", force: true do |t|
     t.integer  "project_id"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20140804203439) do
     t.string   "image"
     t.string   "video_html"
     t.string   "video"
+    t.boolean  "confirmed",   default: false
+    t.boolean  "screening",   default: false
   end
 
   create_table "roles", force: true do |t|
