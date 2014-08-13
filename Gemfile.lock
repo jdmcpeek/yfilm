@@ -139,11 +139,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_search (0.5.4)
-      actionpack (>= 3.0.0.beta4)
-      activerecord (>= 3.0.0.beta4)
-      activesupport (>= 3.0.0.beta4)
-      arel (>= 0.4.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
@@ -276,7 +271,6 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
-  meta_search
   pg
   quiet_assets
   rails (= 4.0.8)
