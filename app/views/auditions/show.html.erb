@@ -7,7 +7,7 @@
 
 			<% Audition.where({project_id: params[:id], role_id: nil}).each do |a| %>
 
-					<% if signedin? && current_user == @producer_id && a.user_id != nil %>
+					<% if user_signed_in? && current_user == @producer_id && a.user_id != nil %>
 						<p>	<%= a.when.strftime("%A, %B %d, %Y at %l%p") %>  |  <%= link_to a.user_name, user_path(a.user_id) %> </p>
 				
 
